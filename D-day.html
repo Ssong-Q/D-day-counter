@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>D-day</title>
+    <link rel="stylesheet" href="./D-day.css" />
+    <script src="./D-day.js" defer></script>
+  </head>
+  <body>
+    <h1>D-Day</h1>
+    <div id="d-day-container">
+      <div class="d-day-child-container">
+        <span id="days">0</span>
+        <span>일</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="hours">0</span>
+        <span>시간</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="mins">0</span>
+        <span>분</span>
+      </div>
+      <div class="d-day-child-container">
+        <span id="secs">0</span>
+        <span>초</span>
+      </div>
+    </div>
+    <div id="d-day-message"></div>
+    <div id="target-selector">
+      <input
+        type="text"
+        id="target-year-input"
+        class="target-input"
+        maxlength="4"
+      />
+      -
+      <input
+        type="text"
+        id="target-month-input"
+        class="target-input"
+        maxlength="2"
+      />
+      -
+      <input
+        type="text"
+        id="target-day-input"
+        class="target-input"
+        maxlength="2"
+      />
+    </div>
+    <button onclick="starter()" class="btn">카운트다운 시작</button>
+    <button onclick="resetTimer()" class="btn">타이머 초기화</button>
+  </body>
+</html>
+
+<!-- 
+  document: 현재 이 문서(객체)
+  document.querySelector: 현재 이 문서의 모든 태그
+  new Date(): 현재 시간 함수
+    >> 소괄호 안에 날짜 적어주면 그 날짜 값 불러옴
+
+  지역변수로 인해 return을 씀
+
+  Localhost(DNS(Domain Name System)): 127.0.0.1(IP주소)
+  localhost:5500
+    >> 5500? live server가 사용하도록 설정해놓은 port 번호
+    >> localhost로 통하는 여러개의 문 중 하나
+  자물쇠가 있는 사이트는 443 port: https 프로토콜
+  자물쇠가 없는 사이트는 80 port: http 프로토콜
+
+  배열 간의 비교; 원시 타입, 참조 타일
+  원시 타입: String, Number, Boolean, Bigint, undefined, Symbol, Null
+    >> 불변성: 데이터가 변하지 않음 (주소 값이 변경이 되기 때문에 데이터는 변하지 않음)
+  참조 타입: 원시 타입 외 모든 것
+    >> 두 번을 거쳐서 객체를 참조해올 수 있는 것
+
+  script 태그내에 defer: script(JS) 읽는 도중에도 html 읽는 것 중단 X
+
+  전달인자, 매개변수: 함수의 외부에서 데이터를 전달 받아 내부에서 활용하기 위한 수단
+    >> 매개변수: 함수를 선언할 때, 소괄호 안에 정의되는 함수
+    >> 전달인자: 함수를 호출할 때, 함수 내부로 전달되는 데이터
+  Web Storage: 브라우저 내에 존재하는 데이터 저장소
+    >> Session storage, Local Storage: key-value 형태 저장, 로컬 환경에 데이터 저장
+    >> Session Storage: 세션 단위로 구분되며 활용
+      >> 세션: 사용자가 브라우저를 통해 웹 페이지에 접속한 시점부터, 해당 웹 페이지 접속을 종료하는 시점 까지를 의미하는 단위 (사용자의 웹페이지 접속 상태에 따른 단위)
+      >> 브라우저, 탭을 종료하면 영구 삭제
+    >> Local Storage: 도메인 단위로 구분되며 활용(localhost)
+      >> 브라우저 자체를 종료해도 존재
+ -->
